@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/linear"
+    tools:context=".item">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:textSize="29sp"
+                android:id="@+id/tvnama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/nama"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:textSize="29sp"
+                android:id="@+id/tvnim"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/nim"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:textSize="29sp"
+                android:id="@+id/tvjurusan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/jurusan"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:textSize="29sp"
+                android:id="@+id/tvalamat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/alamat"
+                android:textColor="@color/colorPrimary" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/hapus"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_delete_black_24dp"
+            android:tint="@color/colorPrimary" />
+    </LinearLayout>
+
+</LinearLayout>

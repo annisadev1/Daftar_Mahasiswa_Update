@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">DaftarMahasiswa</string>
+    <string name="welcome">welcome !</string>
+    <string name="login">login</string>
+    <string name="username">username</string>
+    <string name="password">password</string>
+    <string name="tambah_data">tambah data</string>
+    <string name="tambah_mahasiswa">Tambah Mahasiswa</string>
+    <string name="simpan">simpan</string>
+    <string name="edit_mahasiswa">Edit Mahasiswa</string>
+    <string name="nama">nama</string>
+    <string name="nim">nim</string>
+    <string name="jurusan">jurusan</string>
+    <string name="alamat">alamat</string>
+</resources>

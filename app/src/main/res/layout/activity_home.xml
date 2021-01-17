@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".home">
+
+    <ImageView
+        android:id="@+id/imghome"
+        android:layout_width="250dp"
+        android:layout_height="85dp"
+        android:src="@drawable/bgsplash" />
+
+    <TextView
+        android:id="@+id/texttitelhome"
+        android:layout_below="@id/imghome"
+        android:layout_width="380dp"
+        android:layout_height="85dp"
+        android:layout_marginLeft="15dp"
+        android:text="Daftar Mahasiswa"
+        android:textColor="@color/colorPrimary"
+        android:textSize="45sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:layout_below="@id/texttitelhome"
+        android:id="@+id/buttontambah"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="85dp"
+        android:background="@color/colorPrimary"
+        android:text="@string/tambah_data"
+        android:textColor="#fff" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttontambah"
+        android:id="@+id/refresh">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ListView
+
+                android:id="@+id/list_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:ignore="NestedScrolling" />
+        </ScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+</RelativeLayout>
+
