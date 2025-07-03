@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".tambah">
+    android:padding="16dp"
+    android:background="@android:color/white"
+    tools:context=".setting">
 
     <!-- Bottom Navigation -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -17,55 +19,55 @@
         app:itemIconTint="@null"
         app:itemTextColor="@color/nav_item_color" />
 
-    <!-- Konten scroll -->
+    <!-- Scrollable Content -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/bottom_navigation">
+        android:layout_above="@id/bottom_navigation"
+        android:layout_alignParentTop="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:orientation="vertical">
 
-            <!-- Header -->
+            <!-- Logo/Header sahabatBelajar() -->
             <ImageView
-                android:id="@+id/iv"
                 android:layout_width="250dp"
-                android:layout_height="100dp"
+                android:layout_height="85dp"
                 android:layout_gravity="center_horizontal"
                 android:src="@drawable/bgsplash" />
 
+            <!-- Judul -->
             <TextView
-                android:id="@+id/tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="@string/tambah_mahasiswa"
+                android:layout_marginLeft="25dp"
+                android:text="Edit Mahasiswa"
                 android:textColor="@color/colorPrimary"
-                android:textSize="40sp"
+                android:textSize="45sp"
                 android:textStyle="bold" />
 
-            <!-- Tombol Tambah -->
+            <!-- Tombol Update -->
             <Button
-                android:id="@+id/btntambah"
+                android:id="@+id/btnUpdate"
                 android:layout_width="250dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorPrimary"
-                android:text="@string/simpan"
-                android:textColor="#fff" />
+                android:text="UPDATE"
+                android:textColor="#ffffff" />
 
-            <!-- Form -->
+            <!-- Form Input -->
             <EditText
                 android:id="@+id/etnama"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="25dp"
                 android:backgroundTint="@color/colorPrimary"
-                android:hint="@string/nama"
+                android:hint="Nama"
                 android:textColorHint="@color/colorPrimary" />
 
             <EditText
@@ -74,7 +76,7 @@
                 android:layout_height="48dp"
                 android:layout_marginTop="25dp"
                 android:backgroundTint="@color/colorPrimary"
-                android:hint="@string/nim"
+                android:hint="NIM"
                 android:textColorHint="@color/colorPrimary" />
 
             <EditText
@@ -83,7 +85,7 @@
                 android:layout_height="48dp"
                 android:layout_marginTop="25dp"
                 android:backgroundTint="@color/colorPrimary"
-                android:hint="@string/jurusan"
+                android:hint="Jurusan"
                 android:textColorHint="@color/colorPrimary" />
 
             <EditText
@@ -91,10 +93,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="25dp"
-                android:layout_marginBottom="100dp"
                 android:backgroundTint="@color/colorPrimary"
-                android:hint="@string/alamat"
+                android:hint="Alamat"
                 android:textColorHint="@color/colorPrimary" />
+
+            <!-- Versi Aplikasi -->
+            <TextView
+                android:id="@+id/version_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="15dp"
+                android:text="Versi: 1.0"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="16sp" />
+
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>

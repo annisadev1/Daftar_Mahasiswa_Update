@@ -1,22 +1,90 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".profile"
-    android:orientation="vertical">
-    <ImageView
-        android:layout_width="250dp"
-        android:layout_height="85dp"
-        android:src="@drawable/bgsplash"/>
-    <TextView
-        android:layout_width="380dp"
-        android:layout_height="85dp"
-        android:textColor="@color/colorPrimary"
-        android:text="Profile mahasiswa"
-        android:textSize="45sp"
-        android:textStyle="bold"
-        android:layout_marginLeft="15dp"/>
+    android:padding="16dp">
 
-</LinearLayout>
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@null"
+        app:itemTextColor="@color/nav_item_color" />
+
+    <!-- Konten Scrollable di atas Bottom Navigation -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_navigation">
+
+        <LinearLayout
+            android:id="@+id/profile_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="250dp"
+                android:layout_height="85dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/bgsplash" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Profile Mahasiswa"
+                android:textColor="@color/colorPrimary"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp" />
+
+            <EditText
+                android:id="@+id/etnama"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="25dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:hint="@string/nama"
+                android:textColorHint="@color/colorPrimary"
+                android:enabled="false" />
+
+            <EditText
+                android:id="@+id/etnim"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="25dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:hint="@string/nim"
+                android:textColorHint="@color/colorPrimary"
+                android:enabled="false" />
+
+            <EditText
+                android:id="@+id/etjurusan"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="25dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:hint="@string/jurusan"
+                android:textColorHint="@color/colorPrimary"
+                android:enabled="false" />
+
+            <EditText
+                android:id="@+id/etalamat"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="25dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:hint="@string/alamat"
+                android:textColorHint="@color/colorPrimary"
+                android:enabled="false" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

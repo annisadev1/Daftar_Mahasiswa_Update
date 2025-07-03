@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">DaftarMahasiswa</string>
     <string name="welcome">welcome !</string>
-    <string name="login">login</string>
+    <string name="Login">Login</string>
     <string name="username">username</string>
     <string name="password">password</string>
     <string name="tambah_data">tambah data</string>

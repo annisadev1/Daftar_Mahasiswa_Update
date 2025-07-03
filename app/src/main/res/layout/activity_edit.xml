@@ -1,29 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".edit"
-    android:orientation="vertical">
-    <ImageView
-        android:layout_width="250dp"
-        android:layout_height="85dp"
-        android:src="@drawable/bgsplash"/>
-    <TextView
-        android:layout_width="380dp"
-        android:layout_height="85dp"
-        android:textColor="@color/colorPrimary"
-        android:text="@string/edit_mahasiswa"
-        android:textSize="45sp"
-        android:textStyle="bold"
-        android:layout_marginLeft="15dp"/>
-    <Button
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:background="@color/colorPrimary"
-        android:text="@string/simpan"
-        android:textColor="#fff"
-        android:layout_marginLeft="85dp"/>
+    android:padding="16dp">
 
-</LinearLayout>
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@null"
+        app:itemTextColor="#CC00CCFF" />
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_navigation"
+        android:layout_alignParentTop="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <!-- Logo/Header sahabatBelajar() -->
+            <ImageView
+                android:layout_width="250dp"
+                android:layout_height="85dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/bgsplash" />
+
+            <!-- Judul -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="25dp"
+                android:text="Edit Mahasiswa"
+                android:textColor="@color/colorPrimary"
+                android:textSize="45sp"
+                android:textStyle="bold" />
+
+            <!-- Tombol Update DI SINI -->
+            <Button
+                android:id="@+id/btnUpdate"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="UPDATE"
+                android:textColor="#ffffff" />
+
+            <!-- Form Input -->
+            <EditText
+                android:id="@+id/etnama"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="25dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:hint="Nama"
+                android:textColorHint="@color/colorPrimary" />
+
+            <EditText
+                android:id="@+id/etnim"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="25dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:hint="NIM"
+                android:textColorHint="@color/colorPrimary" />
+
+            <EditText
+                android:id="@+id/etjurusan"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="25dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:hint="Jurusan"
+                android:textColorHint="@color/colorPrimary" />
+
+            <EditText
+                android:id="@+id/etalamat"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="25dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:hint="Alamat"
+                android:textColorHint="@color/colorPrimary" />
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

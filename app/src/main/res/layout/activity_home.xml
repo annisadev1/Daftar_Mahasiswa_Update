@@ -1,58 +1,89 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".home">
 
-    <ImageView
-        android:id="@+id/imghome"
-        android:layout_width="250dp"
-        android:layout_height="85dp"
-        android:src="@drawable/bgsplash" />
-
+    <!-- Baris atas: sahabatBelajar() dan Logout -->
     <TextView
-        android:id="@+id/texttitelhome"
-        android:layout_below="@id/imghome"
-        android:layout_width="380dp"
-        android:layout_height="85dp"
-        android:layout_marginLeft="15dp"
-        android:text="Daftar Mahasiswa"
+        android:id="@+id/text_sahabat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="sahabatBelajar()"
         android:textColor="@color/colorPrimary"
-        android:textSize="45sp"
+        android:textSize="14sp"
         android:textStyle="bold" />
 
-    <Button
-        android:layout_below="@id/texttitelhome"
-        android:id="@+id/buttontambah"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="85dp"
-        android:background="@color/colorPrimary"
-        android:text="@string/tambah_data"
-        android:textColor="#fff" />
+    <TextView
+        android:id="@+id/btnlogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Logout"
+        android:textColor="@color/colorPrimary"
+        android:textSize="14sp"
+        android:textStyle="bold" />
 
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    <!-- Kontainer tengah: judul + tombol tambah -->
+    <LinearLayout
+        android:id="@+id/layout_header"
+        android:layout_below="@id/text_sahabat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/buttontambah"
-        android:id="@+id/refresh">
-        <ScrollView
+        android:orientation="vertical"
+        android:layout_marginTop="32dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/texttitlehome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Daftar Mahasiswa"
+            android:textColor="@color/colorAccent"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/buttontambah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="@string/tambah_data"
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- ListView -->
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refresh"
+        android:layout_below="@id/layout_header"
+        android:layout_above="@id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp">
+
+        <ListView
+            android:id="@+id/list_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <ListView
-
-                android:id="@+id/list_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:ignore="NestedScrolling" />
-        </ScrollView>
-
+            android:layout_height="wrap_content"
+            android:dividerHeight="5dp" />
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/windowBackground"
+        app:menu="@menu/bottom_nav_menu"
+        app:labelVisibilityMode="labeled" />
 
 </RelativeLayout>
-

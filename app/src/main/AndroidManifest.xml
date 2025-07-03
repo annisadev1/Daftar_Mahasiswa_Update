@@ -9,20 +9,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".item"></activity>
-        <activity android:name=".tambah"
-            android:parentActivityName=".home"/>
+
+        <!-- Semua activity aplikasi -->
+        <activity android:name=".item" />
+        <activity android:name=".tambah" android:parentActivityName=".home" />
         <activity android:name=".edit" />
         <activity android:name=".profile" />
         <activity android:name=".home" />
-        <activity android:name=".login" />
+        <activity android:name=".Login" />
+        <activity android:name=".ForgotPasswordActivity" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".setting" /> <!-- ✅ Ini yang ditambahkan -->
+
+        <!-- Activity utama (splash screen) -->
         <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
+
 
 </manifest>
