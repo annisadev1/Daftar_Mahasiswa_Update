@@ -77,7 +77,7 @@
                 android:layout_marginTop="25dp"
                 android:backgroundTint="@color/colorPrimary"
                 android:hint="NIM"
-                android:textColorHint="@color/colorPrimary" />
+                android:textColorHint="@color/colorAccent" />
 
             <EditText
                 android:id="@+id/etjurusan"
